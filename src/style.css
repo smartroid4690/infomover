@@ -1,0 +1,227 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	/* --color-shadow: rgba(255, 185, 35, 0.507); */
+
+	--color-shadow: rgba(255, 242, 214, 0.507);
+	--golden: #ffbb0030;
+}
+
+body {
+	background: black;
+	animation: fadeInAnimation ease 4s;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+}
+
+body::-webkit-scrollbar {
+	width: 6px;
+}
+
+body::-webkit-scrollbar-track {
+	/* box-shadow: inset 0 0 6px rgba(255, 204, 0, 0.3); */
+	box-shadow: inset 0 0 6px rgba(255, 239, 174, 0.2);
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: gray;
+	border-radius: 100px;
+}
+.hero {
+	animation: fadeOutAnimation ease forwards;
+	animation-timeline: view(-100px 900px);
+}
+
+.shadow-custom {
+	box-shadow: 0 -20px 30px -20px #ffbb003f;
+	/* border-top: 1px solid #ffbb003a;
+
+	box-shadow: 0 0 10px rgba(255, 174, 0, 0.699); */
+}
+
+.divider-anim {
+	width: 0%;
+	display: block;
+	height: 1px;
+	background: var(--color-shadow);
+	background-size: cover;
+	animation: DividerAnim ease forwards;
+	animation-timeline: view();
+	animation-range-start: 200px;
+	animation-range-end: 600px;
+}
+
+.highlight {
+	@apply px-2  text-zinc-300 font-medium;
+}
+
+.fadeOutAnimation {
+	animation: fadeOutAnimation ease forwards;
+	animation-timeline: view();
+	animation-range-start: 130vh;
+	animation-range-end: 200vh;
+}
+
+.rotateStar {
+	transform-origin: 50% 40%;
+	fill: white;
+	scale: 0.8;
+	transform: translateY(-10%);
+	animation: RotateStar ease forwards;
+
+	animation-timeline: view();
+	animation-range-start: 90vh;
+	animation-range-end: 160vh;
+}
+
+.dollar {
+	transform-origin: 50% 40%;
+	scale: 0.6;
+	transform: translateY(-10%) scaleX(0);
+	animation: RotateDollar ease forwards;
+	animation-timeline: view();
+	animation-range-start: 160vh;
+	animation-range-end: 200vh;
+}
+
+.text-fade-out {
+	opacity: 100%;
+	animation: TextFadeInOld ease forwards;
+	animation-direction: reverse;
+	animation-timeline: view();
+	animation-range-start: 70vh;
+	animation-range-end: 120vh;
+}
+/* .text-fade-out-2 {
+	opacity: 100%;
+	animation: TextFadeIn ease forwards;
+	animation-direction: reverse;
+	animation-timeline: view();
+	animation-range-start: 210vh;
+	animation-range-end: 250vh;
+} */
+
+.text-fade-in {
+	opacity: 0%;
+	animation: TextFadeIn ease forwards;
+	animation-timeline: view();
+	animation-range-start: 45vh;
+	animation-range-end: 100vh;
+}
+
+@keyframes TextFadeInOld {
+	0% {
+		opacity: 0%;
+	}
+
+	100% {
+		opacity: 100%;
+	}
+}
+@keyframes TextFadeIn {
+	0% {
+		opacity: 0%;
+	}
+	25% {
+		opacity: 100%;
+	}
+	75% {
+		opacity: 100%;
+	}
+	100% {
+		opacity: 0%;
+	}
+}
+
+@keyframes RotateStar {
+	0% {
+		transform: rotate(0deg) translateY(-10%) scaleY(1);
+	}
+
+	40% {
+		transform: rotate(90deg) translateY(-10%) scaleY(1);
+	}
+	75% {
+		transform: rotate(90deg) translateY(-10%) scaleY(1);
+	}
+	100% {
+		transform: rotate(90deg) translateY(0%) scaleY(0);
+	}
+}
+
+@keyframes RotateDollar {
+	0% {
+		scale: 0.6;
+		transform: rotate(0deg) translateY(-10%) scaleX(0);
+	}
+	100% {
+		scale: 0.6;
+		transform: rotate(0deg) translateY(-10%) scaleX(1);
+	}
+}
+
+@keyframes DividerAnim {
+	0% {
+		width: 0%;
+	}
+	100% {
+		width: 100%;
+		/* background: radial-gradient(circle, var(--color-shadow) 40%, black); */
+	}
+}
+
+@keyframes fadeOutAnimation {
+	0% {
+		opacity: 1;
+	}
+	100% {
+		opacity: 0;
+	}
+}
+
+@keyframes fadeInAnimation {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* 
+.text-fade-out {
+	opacity: 100%;
+	animation: TextFadeIn ease forwards;
+	animation-direction: reverse;
+	animation-timeline: view();
+	animation-range-start: 70vh;
+	animation-range-end: 120vh;
+}
+.text-fade-out-2 {
+	opacity: 100%;
+	animation: TextFadeIn ease forwards;
+	animation-direction: reverse;
+	animation-timeline: view();
+	animation-range-start: 210vh;
+	animation-range-end: 250vh;
+}
+
+.text-fade-in {
+	opacity: 0%;
+	animation: TextFadeIn ease forwards;
+	animation-timeline: view();
+	animation-range-start: 40vh;
+	animation-range-end: 70vh;
+}
+
+@keyframes TextFadeIn {
+	0% {
+		opacity: 0%;
+	}
+	100% {
+		opacity: 100%;
+	}
+} */
